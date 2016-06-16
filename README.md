@@ -63,7 +63,7 @@ def comb(k,n):
 >>> sum(4*a_n(1,i) for i in range(10000000))
 3.1415925535897915
 ```
-#### cos(x) (taylor series with c=pi/4, f(x)=(sum n=0 to inf ((-1)^(floor((n+1) / 2) mod 2) 1/sqrt(2) / n! (x-pi/4)^n))))
+#### cos(x) (taylor series with c=pi/4, f(x)=(sum n=0 to inf ((-1)^(floor((n+1)/2)) 1/sqrt(2) / n! (x-pi/4)^n)))
 ```
 >>> def a_n(x,n):
 ...  m=1 if math.floor((n+1)/2)%2 == 0 else -1
