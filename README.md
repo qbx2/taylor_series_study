@@ -63,3 +63,26 @@ def comb(k,n):
 >>> sum(4*a_n(1,i) for i in range(10000000))
 3.1415925535897915
 ```
+#### cos(x) (taylor series with c=pi/4)
+```
+>>> def a_n(x,n):
+...  m=1 if math.floor((n+1)/2)%2 == 0 else -1
+...  m/=math.sqrt(2)
+...  for i in range(n):
+...   m*=(x-math.pi/4)/(i+1)
+...  return m
+... 
+>>> a_n(math.pi/3,0)
+0.7071067811865475
+>>> a_n(math.pi/3,1)
+-0.18512012242326517
+>>> a_n(math.pi/3,2)
+-0.024232167359857202
+>>> a_n(math.pi/3,3)
+0.0021146555266190483
+>>> sum(a_n(math.pi/3,i) for i in range(100))
+0.5000000000000001
+>>> x = np.arange(-5, 5, 0.01)
+>>> plt.plot(x, a_n(x))
+```
+![alt mycos](mycos.png)
