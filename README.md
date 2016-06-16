@@ -83,6 +83,8 @@ def comb(k,n):
 >>> sum(a_n(math.pi/3,i) for i in range(100))
 0.5000000000000001
 >>> x = np.arange(-5, 5, 0.01)
->>> plt.plot(x, a_n(x))
+>>> plt.plot(x, sum(a_n(x,i) for i in range(1000)))
+[<matplotlib.lines.Line2D object at 0x11694e8d0>]
+>>> plt.show()
 ```
 ![alt mycos](mycos.png)
